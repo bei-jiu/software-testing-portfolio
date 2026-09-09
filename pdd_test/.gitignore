@@ -1,0 +1,10 @@
+# Python 字节码缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pytest 缓存
+.pytest_cache/
+
+# 测试截图（含个人账号、订单、地址等信息，不公开上传）
+screenshots/

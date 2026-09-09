@@ -1,0 +1,17 @@
+# 登录接口测试数据（数据驱动）
+# 业务返回码 code 说明：0=成功，-1=账号为空，-3=账号不存在，-4=密码错误
+- name: "登录成功-正确的账号密码"
+  data: { accounts: "admin", pwd: "123456", type: "username" }
+  expect_code: 0
+
+- name: "登录失败-密码错误"
+  data: { accounts: "admin", pwd: "wrong123", type: "username" }
+  expect_code: -4
+
+- name: "登录失败-账号不存在"
+  data: { accounts: "not_exist_9999", pwd: "123456", type: "username" }
+  expect_code: -3
+
+- name: "登录失败-账号为空"
+  data: { accounts: "", pwd: "123456", type: "username" }
+  expect_code: -1
